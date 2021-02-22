@@ -2,8 +2,8 @@
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <Extern href="stdidcmd.h" />
-
   <Extern href="vsshlids.h" />
+  <Include href="KnownImageIds.vsct"/>
 
   <Commands package="guidIncreaseFontSizePackage">
     <Groups>
@@ -15,38 +15,37 @@
     <Buttons>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidIncreaseFontSize" id="bmpPic1" />
+        <Icon guid="ImageCatalogGuid" id="IncreaseFontSize" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Increase Editor Font Sizes</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidDecreaseFontSize" id="bmpPic1" />
+        <Icon guid="ImageCatalogGuid" id="DecreaseFontSize" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Decrease Editor Font Sizes</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnviornmentFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidIncreaseFontSize" id="bmpPic1" />
+        <Icon guid="ImageCatalogGuid" id="IncreaseFontSize" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Increase Enviornment Font Size</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnviornmentFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidDecreaseFontSize" id="bmpPic1" />
+        <Icon guid="ImageCatalogGuid" id="DecreaseFontSize" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Decrease Enviornment Font Size</ButtonText>
         </Strings>
       </Button>
     </Buttons>
-
-    <Bitmaps>
-      <Bitmap guid="guidIncreaseFontSize" href="Resources\IncreaseFontSize.png" usedList="bmpPic1" />
-      <Bitmap guid="guidDecreaseFontSize" href="Resources\DecreaseFontSize.png" usedList="bmpPic1" />
-    </Bitmaps>
   </Commands>
 
   <Symbols>
@@ -59,14 +58,5 @@
       <IDSymbol value="4130" name="cmdidIncreaseEnviornmentFontSize" />
       <IDSymbol value="4131" name="cmdidDecreaseEnviornmentFontSize" />
     </GuidSymbol>
-
-    <GuidSymbol name="guidIncreaseFontSize" value="{cdf18170-d1de-407c-8a0c-b62b1679a964}">
-      <IDSymbol name="bmpPic1" value="1" />
-    </GuidSymbol>
-  
-    <GuidSymbol name="guidDecreaseFontSize" value="{485347fb-c9e4-40b9-b140-1a8e8438f8ff}">
-      <IDSymbol name="bmpPic1" value="1" />
-    </GuidSymbol>
-
   </Symbols>
 </CommandTable>
