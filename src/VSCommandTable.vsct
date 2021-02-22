@@ -7,14 +7,26 @@
 
   <Commands package="guidIncreaseFontSizePackage">
     <Groups>
-      <Group guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+      <Group guid="guidIncreaseFontSizePackageCmdSet" id="EditorGroup" priority="0x0600">
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenu" />
+      </Group>
+      <Group guid="guidIncreaseFontSizePackageCmdSet" id="EnvironmentGroup" priority="0x0600">
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenu" />
       </Group>
     </Groups>
 
+    <Menus>
+      <Menu guid="guidIncreaseFontSizePackageCmdSet" id="MyMenu" priority="100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_TOOLS_EXT_TOOLS"/>
+        <Strings>
+          <ButtonText>Font Sizer</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
     <Buttons>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseFontSize" priority="0x0100" type="Button">
-        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EditorGroup" />
         <Icon guid="ImageCatalogGuid" id="IncreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -22,7 +34,7 @@
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseFontSize" priority="0x0100" type="Button">
-        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EditorGroup" />
         <Icon guid="ImageCatalogGuid" id="DecreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -30,7 +42,7 @@
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnviornmentFontSize" priority="0x0100" type="Button">
-        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EnvironmentGroup" />
         <Icon guid="ImageCatalogGuid" id="IncreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -38,7 +50,7 @@
         </Strings>
       </Button>
       <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnviornmentFontSize" priority="0x0100" type="Button">
-        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="MyMenuGroup" />
+        <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EnvironmentGroup" />
         <Icon guid="ImageCatalogGuid" id="DecreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -48,15 +60,24 @@
     </Buttons>
   </Commands>
 
+  <KeyBindings>
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseFontSize" editor="guidVSStd97" key1="VK_ADD" mod1="Control" />
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseFontSize" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control" />
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnviornmentFontSize" editor="guidVSStd97" key1="VK_ADD" mod1="Control Shift" />
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnviornmentFontSize" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control Shift" />
+  </KeyBindings>
+
   <Symbols>
     <GuidSymbol name="guidIncreaseFontSizePackage" value="{1099b5c0-7023-4762-9cd9-008d1219c716}" />
 
     <GuidSymbol name="guidIncreaseFontSizePackageCmdSet" value="{fcca8c63-3b62-4b25-aad1-e644cc9528cc}">
-      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="EditorGroup" value="0x1020" />
+      <IDSymbol name="EnvironmentGroup" value="0x1021" />
+      <IDSymbol name="MyMenu" value="0x1030" />
       <IDSymbol name="cmdidIncreaseFontSize" value="0x0100" />
-      <IDSymbol value="4129" name="cmdidDecreaseFontSize" />
-      <IDSymbol value="4130" name="cmdidIncreaseEnviornmentFontSize" />
-      <IDSymbol value="4131" name="cmdidDecreaseEnviornmentFontSize" />
+      <IDSymbol name="cmdidDecreaseFontSize" value="0x0200" />
+      <IDSymbol name="cmdidIncreaseEnviornmentFontSize" value="0x0300" />
+      <IDSymbol name="cmdidDecreaseEnviornmentFontSize" value="0x0400" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

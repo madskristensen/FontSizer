@@ -1,23 +1,21 @@
 # Font Sizer
 
-<!-- Replace this badge with your own-->
-[![Build status](https://ci.appveyor.com/api/projects/status/tnus4nu8x9f65vbd?svg=true)](https://ci.appveyor.com/project/kdawg1406/fontsizer)
+[![Build status](https://ci.appveyor.com/api/projects/status/y16092oovynedyma?svg=true)](https://ci.appveyor.com/project/madskristensen/fontsizer)
 
-<!-- Update the VS Gallery link after you upload the VSIX-->
 Download this extension from the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=KarlShifflettkdawg.FontSizer)
-or get the [CI build](http://vsixgallery.com/extension/a7f3c8a0-dc70-429d-8ca5-7ccc9b09e013/).
+or get the [CI build](http://vsixgallery.com/extension/f7198797-d75d-4a7b-93c6-7bb56907735b/).
 
 ---------------------------------------
 
-Visual Studio 2017 Extension for easily changing the font sizes in the editor or environment.
-
+An easy way to change the font sizes in the editor and Visual Studio environment.
 
 ### Credits
-I learned a lot from this oustanding extension.  Essentially, I updated for VS 2017 and added environment font size changing.  Sam Harwell gets all the credit for the hard work.
-https://github.com/tunnelvisionlabs/PresentationMode
+A fork of the [FontSizer extension](https://github.com/craigeddy/FontSizer) that I updated to support Visual Studio 2019.
 
 ## Features
 Quickly change the editor's font sizes or the environment's font size.
+
+![Tools menu](art/screenshot.png)
 
 Recommend assigning shortcut keys to each of the 4 commands. These are the commands I use:
 
@@ -38,12 +36,6 @@ Each time the respective Editor increase font size or decrease font size command
 
 ### Change Environment Font Size
 Each time the respective Editor increase font size or decrease font size command is invoked the environment font size is changed by 2.
-
-For cloning and building this project yourself, make sure
-to install the
-[Extensibility Tools 2015](https://visualstudiogallery.msdn.microsoft.com/ab39a092-1343-46e2-b0f1-6a3f91155aa6)
-extension for Visual Studio which enables some features
-used by this project.
 
 ## License
 [Apache 2.0](LICENSE)
