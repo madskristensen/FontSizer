@@ -19,8 +19,8 @@ namespace FontSizer
 
             await IncreaseFontSize.InitializeAsync(this);
             await DecreaseFontSize.InitializeAsync(this);
-            await IncreaseEnviornmentFontSize.InitializeAsync(this);
-            await DecreaseEnviornmentFontSize.InitializeAsync(this);
+            await IncreaseEnvironmentFontSize.InitializeAsync(this);
+            await DecreaseEnvironmentFontSize.InitializeAsync(this);
         }
     }
 }

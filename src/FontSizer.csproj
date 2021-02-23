@@ -48,10 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Commands\DecreaseEnviornmentFontSize.cs" />
+    <Compile Include="Commands\DecreaseEnvironmentFontSize.cs" />
     <Compile Include="Commands\DecreaseFontSize.cs" />
     <Compile Include="Commands\FontSizeCommandBase.cs" />
-    <Compile Include="Commands\IncreaseEnviornmentFontSize.cs" />
+    <Compile Include="Commands\IncreaseEnvironmentFontSize.cs" />
     <Compile Include="Commands\IncreaseFontSize.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>

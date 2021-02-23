@@ -6,7 +6,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace FontSizer.Commands
 {
-    internal sealed class DecreaseEnviornmentFontSize : FontSizeCommandBase
+    internal sealed class DecreaseEnvironmentFontSize : FontSizeCommandBase
     {
         public static async Task InitializeAsync(AsyncPackage package)
         {
