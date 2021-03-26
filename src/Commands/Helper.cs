@@ -7,16 +7,11 @@ using Task = System.Threading.Tasks.Task;
 
 namespace FontSizer.Commands
 {
-    internal abstract class FontSizeCommandBase
+    internal static class Helper
     {
+        public const string CodeLensCategory = "{FC88969A-CBED-4940-8F48-142A503E2381}";
 
-        protected const string CodeLensCategory = "{FC88969A-CBED-4940-8F48-142A503E2381}";
-
-        protected FontSizeCommandBase()
-        {
-        }
-
-        protected static async Task AdjustFontSizeAsync(AsyncPackage serviceProvider, Guid category, short change)
+        public static async Task AdjustFontSizeAsync(AsyncPackage serviceProvider, Guid category, short change)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 

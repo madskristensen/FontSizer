@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel.Design;
+using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -7,23 +7,18 @@ using Task = System.Threading.Tasks.Task;
 
 namespace FontSizer.Commands
 {
-    internal sealed class IncreaseFontSize : FontSizeCommandBase
+    internal sealed class IncreaseFontSize : BaseCommand<IncreaseFontSize>
     {
-        public static async Task InitializeAsync(AsyncPackage package)
-        {
-            IMenuCommandService commandService = await package.GetServiceAsync<IMenuCommandService, IMenuCommandService>();
-            var menuCommandID = new CommandID(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidIncreaseFontSize);
-            var menuItem = new MenuCommand((s, e) => ExecuteAsync(package).ConfigureAwait(false), menuCommandID);
-            commandService.AddCommand(menuItem);
-        }
+        public IncreaseFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidIncreaseFontSize)
+        { }
 
-        private static async Task ExecuteAsync(AsyncPackage package)
+        protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await AdjustFontSizeAsync(package, new Guid(FontsAndColorsCategory.TextEditor), 2);
-            await AdjustFontSizeAsync(package, new Guid(FontsAndColorsCategory.StatementCompletion), 1);
-            await AdjustFontSizeAsync(package, new Guid(FontsAndColorsCategory.TextOutputToolWindows), 1);
-            await AdjustFontSizeAsync(package, new Guid(FontsAndColorsCategory.Tooltip), 1);
-            await AdjustFontSizeAsync(package, new Guid(CodeLensCategory), 1);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.TextEditor), 2);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.StatementCompletion), 1);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.TextOutputToolWindows), 1);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.Tooltip), 1);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(Helper.CodeLensCategory), 1);
         }
     }
 }

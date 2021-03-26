@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 namespace FontSizer
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.guidIncreaseFontSizePackageString)]
     public sealed class VSPackage : AsyncPackage

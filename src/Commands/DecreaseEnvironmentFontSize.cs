@@ -1,24 +1,19 @@
 ﻿using System;
-using System.ComponentModel.Design;
+using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace FontSizer.Commands
 {
-    internal sealed class DecreaseEnvironmentFontSize : FontSizeCommandBase
+    internal sealed class DecreaseEnvironmentFontSize : BaseCommand<DecreaseEnvironmentFontSize>
     {
-        public static async Task InitializeAsync(AsyncPackage package)
-        {
-            IMenuCommandService commandService = await package.GetServiceAsync<IMenuCommandService, IMenuCommandService>();
-            var menuCommandID = new CommandID(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidDecreaseEnviornmentFontSize);
-            var menuItem = new MenuCommand((s, e) => ExecuteAsync(package).ConfigureAwait(false), menuCommandID);
-            commandService.AddCommand(menuItem);
-        }
+        public DecreaseEnvironmentFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidDecreaseEnviornmentFontSize)
+        { }
 
-        private static async Task ExecuteAsync(AsyncPackage package)
+        protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await AdjustFontSizeAsync(package, new Guid(FontsAndColorsCategory.DialogsAndToolWindows), -2);
+            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.DialogsAndToolWindows), -2);
         }
     }
 }
