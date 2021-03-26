@@ -1,5 +1,4 @@
-﻿using System;
-using Community.VisualStudio.Toolkit;
+﻿using Community.VisualStudio.Toolkit;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -13,7 +12,7 @@ namespace FontSizer.Commands
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await Helper.AdjustFontSizeAsync(Package, new Guid(FontsAndColorsCategory.DialogsAndToolWindows), -2);
+            await Helper.AdjustFontSizeAsync(FontsAndColorsCategory.DialogsAndToolWindows, -2);
         }
     }
 }

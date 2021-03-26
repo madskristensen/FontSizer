@@ -1,4 +1,5 @@
 ﻿using System;
+using Community.VisualStudio.Toolkit;
 using Microsoft;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
@@ -11,11 +12,11 @@ namespace FontSizer.Commands
     {
         public const string CodeLensCategory = "{FC88969A-CBED-4940-8F48-142A503E2381}";
 
-        public static async Task AdjustFontSizeAsync(AsyncPackage serviceProvider, Guid category, short change)
+        public static async Task AdjustFontSizeAsync(string categoryGuid, short change)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            IVsFontAndColorStorage storage = await serviceProvider.GetServiceAsync<SVsFontAndColorStorage, IVsFontAndColorStorage>();
+            IVsFontAndColorStorage storage = await VS.Shell.GetFontAndColorStorageAsync();
             Assumes.Present(storage);
             // ReSharper disable once SuspiciousTypeConversion.Global
             var utilities = storage as IVsFontAndColorUtilities;
@@ -26,6 +27,7 @@ namespace FontSizer.Commands
 
             var pLOGFONT = new LOGFONTW[1];
             var pInfo = new FontInfo[1];
+            var category = new Guid(categoryGuid);
 
             ErrorHandler.ThrowOnFailure(storage.OpenCategory(category, (uint)(__FCSTORAGEFLAGS.FCSF_LOADDEFAULTS | __FCSTORAGEFLAGS.FCSF_PROPAGATECHANGES)));
             try
