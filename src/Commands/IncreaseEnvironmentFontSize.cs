@@ -7,7 +7,7 @@ namespace FontSizer.Commands
 {
     internal sealed class IncreaseEnvironmentFontSize : BaseCommand<IncreaseEnvironmentFontSize>
     {
-        public IncreaseEnvironmentFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidIncreaseEnviornmentFontSize)
+        public IncreaseEnvironmentFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidIncreaseEnvironmentFontSize)
         { }
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)

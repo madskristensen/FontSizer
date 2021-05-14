@@ -28,7 +28,7 @@ namespace FontSizer
         public const int MyMenu = 0x1030;
         public const int cmdidIncreaseFontSize = 0x0100;
         public const int cmdidDecreaseFontSize = 0x0200;
-        public const int cmdidIncreaseEnviornmentFontSize = 0x0300;
-        public const int cmdidDecreaseEnviornmentFontSize = 0x0400;
+        public const int cmdidIncreaseEnvironmentFontSize = 0x0300;
+        public const int cmdidDecreaseEnvironmentFontSize = 0x0400;
     }
 }
