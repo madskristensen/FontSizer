@@ -41,20 +41,20 @@
           <ButtonText>Decrease Editor Font Sizes</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnviornmentFontSize" priority="0x0100" type="Button">
+      <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnvironmentFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EnvironmentGroup" />
         <Icon guid="ImageCatalogGuid" id="IncreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Increase Enviornment Font Size</ButtonText>
+          <ButtonText>Increase Environment Font Size</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnviornmentFontSize" priority="0x0100" type="Button">
+      <Button guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnvironmentFontSize" priority="0x0100" type="Button">
         <Parent guid="guidIncreaseFontSizePackageCmdSet" id="EnvironmentGroup" />
         <Icon guid="ImageCatalogGuid" id="DecreaseFontSize" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Decrease Enviornment Font Size</ButtonText>
+          <ButtonText>Decrease Environment Font Size</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -63,8 +63,8 @@
   <KeyBindings>
     <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseFontSize" editor="guidVSStd97" key1="VK_ADD" mod1="Control" />
     <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseFontSize" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control" />
-    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnviornmentFontSize" editor="guidVSStd97" key1="VK_ADD" mod1="Control Shift" />
-    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnviornmentFontSize" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control Shift" />
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidIncreaseEnvironmentFontSize" editor="guidVSStd97" key1="VK_ADD" mod1="Control Shift" />
+    <KeyBinding guid="guidIncreaseFontSizePackageCmdSet" id="cmdidDecreaseEnvironmentFontSize" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control Shift" />
   </KeyBindings>
 
   <Symbols>
@@ -76,8 +76,8 @@
       <IDSymbol name="MyMenu" value="0x1030" />
       <IDSymbol name="cmdidIncreaseFontSize" value="0x0100" />
       <IDSymbol name="cmdidDecreaseFontSize" value="0x0200" />
-      <IDSymbol name="cmdidIncreaseEnviornmentFontSize" value="0x0300" />
-      <IDSymbol name="cmdidDecreaseEnviornmentFontSize" value="0x0400" />
+      <IDSymbol name="cmdidIncreaseEnvironmentFontSize" value="0x0300" />
+      <IDSymbol name="cmdidDecreaseEnvironmentFontSize" value="0x0400" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
