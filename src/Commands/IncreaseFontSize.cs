@@ -3,14 +3,11 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-
 namespace FontSizer.Commands
 {
+    [Command(PackageIds.cmdidIncreaseFontSize)]
     internal sealed class IncreaseFontSize : BaseCommand<IncreaseFontSize>
     {
-        public IncreaseFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidIncreaseFontSize)
-        { }
-
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await Helper.AdjustFontSizeAsync(FontsAndColorsCategory.TextEditor, 2);

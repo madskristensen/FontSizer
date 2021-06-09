@@ -5,11 +5,9 @@ using Task = System.Threading.Tasks.Task;
 
 namespace FontSizer.Commands
 {
+    [Command(PackageIds.cmdidDecreaseEnviornmentFontSize)]
     internal sealed class DecreaseEnvironmentFontSize : BaseCommand<DecreaseEnvironmentFontSize>
     {
-        public DecreaseEnvironmentFontSize() : base(PackageGuids.guidIncreaseFontSizePackageCmdSet, PackageIds.cmdidDecreaseEnviornmentFontSize)
-        { }
-
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await Helper.AdjustFontSizeAsync(FontsAndColorsCategory.DialogsAndToolWindows, -2);

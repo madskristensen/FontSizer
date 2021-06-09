@@ -14,9 +14,6 @@ namespace FontSizer
     {
         public const string guidIncreaseFontSizePackageString = "1099b5c0-7023-4762-9cd9-008d1219c716";
         public static Guid guidIncreaseFontSizePackage = new Guid(guidIncreaseFontSizePackageString);
-
-        public const string guidIncreaseFontSizePackageCmdSetString = "fcca8c63-3b62-4b25-aad1-e644cc9528cc";
-        public static Guid guidIncreaseFontSizePackageCmdSet = new Guid(guidIncreaseFontSizePackageCmdSetString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
