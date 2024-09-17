@@ -22,7 +22,7 @@ Recommend assigning shortcut keys to each of the 4 commands. These are the comma
 - CTRL + Num Pad Arrow Up = Increase editor font sizes
 - CTRL + Num Pad Arrow Down = Decrease editor font sizes
 - CTRL + Num Pad Arrow Right = Increase environment font size
-- CTRL + Num Pad Arrow Left = Increase environment font size
+- CTRL + Num Pad Arrow Left = Decrease environment font size
 
 
 ### Change Editor Font Size
