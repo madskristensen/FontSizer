@@ -37,7 +37,17 @@ namespace FontSizer.Commands
                     return;
                 }
 
-                pInfo[0].wPointSize = checked((ushort)(pInfo[0].wPointSize + change));
+                int newPointSize = pInfo[0].wPointSize + change;
+                if (newPointSize < 1)
+                {
+                    newPointSize = 1;
+                }
+                else if (newPointSize > ushort.MaxValue)
+                {
+                    newPointSize = ushort.MaxValue;
+                }
+
+                pInfo[0].wPointSize = (ushort)newPointSize;
                 ErrorHandler.ThrowOnFailure(storage.SetFont(pInfo));
                 ErrorHandler.ThrowOnFailure(utilities.FreeFontInfo(pInfo));
             }

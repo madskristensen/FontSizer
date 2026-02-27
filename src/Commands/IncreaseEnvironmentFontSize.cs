@@ -1,4 +1,5 @@
 ﻿using Community.VisualStudio.Toolkit;
+using FontSizer.Options;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -10,7 +11,10 @@ namespace FontSizer.Commands
     {
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await Helper.AdjustFontSizeAsync(FontsAndColorsCategory.DialogsAndToolWindows, 2);
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            short step = VSPackage.Instance?.GetEnvironmentFontStep() ?? GeneralOptionsPage.DefaultEnvironmentFontStep;
+            await Helper.AdjustFontSizeAsync(FontsAndColorsCategory.DialogsAndToolWindows, step);
         }
     }
 }
